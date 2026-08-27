@@ -1,0 +1,38 @@
+
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <title>Mapa do Incidente vs Rota TomTom</title>
+                        <meta charset="utf-8" />
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+                        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+                        <style>
+                            #map { height: 100vh; width: 100%; }
+                            body { margin: 0; padding: 0; }
+                        </style>
+                    </head>
+                    <body>
+                        <div id="map"></div>
+                        <script>
+                            var map = L.map('map').setView([-23.6168637133, -46.7925806872], 15);
+                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                maxZoom: 19,
+                                attribution: '© OpenStreetMap'
+                            }).addTo(map);
+
+                            // Incidente (Vermelho)
+                            var incidentCoords = [[-23.6168637133, -46.7925806872], [-23.6168503503, -46.7927416197], [-23.6168530382, -46.7928381792], [-23.616913402, -46.7931573621], [-23.6169911223, -46.7935073904], [-23.6170635435, -46.7938252321], [-23.6171560858, -46.7942114702], [-23.6172795011, -46.7947452298], [-23.6173384823, -46.7949946753], [-23.6173438582, -46.7950214974], [-23.617351922, -46.7950469783], [-23.6173626738, -46.7950670949], [-23.6173827182, -46.7950898937], [-23.617396158, -46.7951006225], [-23.6174202727, -46.7951153747], [-23.6174618974, -46.7951314679]];
+                            var incidentLine = L.polyline(incidentCoords, {color: 'red', weight: 8, opacity: 0.7}).addTo(map);
+                            incidentLine.bindPopup('<b>Incidente Reportado</b><br>Atraso: 178s');
+
+                            // Rota TomTom (Azul tracejado)
+                            var routeCoords = [[-23.61686, -46.79258], [-23.61685, -46.79274], [-23.61685, -46.79274], [-23.61685, -46.79274], [-23.61686, -46.79284], [-23.61686, -46.79284], [-23.61686, -46.79284], [-23.61691, -46.79316], [-23.61691, -46.79316], [-23.61691, -46.79316], [-23.617, -46.79351], [-23.617, -46.79351], [-23.61707, -46.79382], [-23.61707, -46.79382], [-23.61716, -46.79421], [-23.61716, -46.79421], [-23.61728, -46.79474], [-23.61728, -46.79474], [-23.61734, -46.79499], [-23.61734, -46.79499], [-23.61735, -46.79502], [-23.61735, -46.79502], [-23.61735, -46.79502], [-23.61735, -46.79505], [-23.61735, -46.79505], [-23.61736, -46.79507], [-23.61736, -46.79507], [-23.61736, -46.79507], [-23.61738, -46.79509], [-23.61738, -46.79509], [-23.61738, -46.79509], [-23.6174, -46.7951], [-23.6174, -46.7951], [-23.61742, -46.79511], [-23.61742, -46.79511], [-23.61746, -46.79513]];
+                            var routeLine = L.polyline(routeCoords, {color: 'blue', weight: 5, dashArray: '10, 10'}).addTo(map);
+                            routeLine.bindPopup('<b>Rota TomTom (Desvio)</b><br>Tempo Normal: 98s<br>Com Trânsito: 255s');
+
+                            map.fitBounds(routeLine.getBounds());
+                        </script>
+                    </body>
+                    </html>
+                    

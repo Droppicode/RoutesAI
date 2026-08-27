@@ -1,0 +1,1016 @@
+{
+    "linhas": [
+        {
+            "consorcio": "BUS +",
+            "tarifa": 7.1,
+            "codigo": "746",
+            "veiculos": [
+                {
+                    "consorcio": "BUS +",
+                    "empresa": "TRANSPORTES CAPELLINI",
+                    "prefixo": "19168",
+                    "codigoLinha": "746",
+                    "sentidoLinha": "ida",
+                    "idRota": 8251.0,
+                    "dataUltimaTransmissao": 1786801418000.0,
+                    "latitude": -22.86632,
+                    "longitude": -47.22539,
+                    "seqPonto": 0.0,
+                    "acessibilidade": "sim",
+                    "capacidadeSentados": 35.0,
+                    "capacidadeEmPe": 45.0,
+                    "dataAutorizacao": 1572346980000.0,
+                    "placa": "EUF 0H82",
+                    "idVeiculo": 66213.0,
+                    "alertaNaoTransmitiuCiclo": false,
+                    "dentroRota": true
+                }
+            ],
+            "rotas": [
+                {
+                    "consorcio": "BUS +",
+                    "encode": "xeqjCfwf_Ht@Fh@D^I`@sAT_Az@iDd@_B\\sAb@wAt@mCT{@d@}APm@r@cCXcAXgATw@Ty@Lg@Pk@j@mB`@sAX_ALc@Le@\\oAh@oBZiAz@_D`@yAh@oB\\iA|@}CRm@Ps@XeA^oAZeAl@wAb@cA`@yAV{@z@{CPm@XgADODu@Nm@Ro@V_APo@J[Ni@Le@Z}@L]BCHCDA??BKR_AKMGCE?GBOFEROj@?\\Md@M`@Oj@Od@K`@M`@K`@Oh@K^Md@W`A[\\K^Oh@Sv@K^i@fBu@dCEPGPK`@??]jAOb@Uz@Sv@_@vA[lA[jA_@nAk@lBo@zB_@nASr@[dAm@vBY`A[fA_@rAeAdDu@`C_A@cA?_BEs@AwBGgAC{AC}@C_AC??}AEwAAy@A}@AI?c@Ck@C_AGm@CCTO`@U^[b@e@h@SVMLWXMLa@\\ULo@\\G@G?o@?Ag@Au@Ca@Ai@Es@??AWEiACk@Ey@IqBEcACi@DCFAHAN?P?rB@hA@Z?hA?fA@z@?nA@N{DDaAB}@DeADaADqA@w@B_AB}@??B{@?E?S?UAQC]AKKw@Ku@Io@Gg@Gm@OqAIw@W}BOsAPCPCV_@r@gA~@wAjBuCv@mAt@kAv@mA\\k@b@m@jAeBV_@Xc@j@w@|AuBj@w@h@s@Xa@T[l@y@`@k@f@q@PWR[RUTUBADCDAJCJCb@GREREHIJGLELEDCFGHKBI@IBSAMCMEKEEICc@Kg@MKCsA[[I]KgAYu@Uw@Ui@M]Ic@KQEOEK?GAo@K_@IUGUE[GWEGC??_@IOCIA_@I_@K}@U_@KOEMCCCGBe@R_@LULKHEDEDM`@Ol@oA_@m@Qe@Og@OMCMEUGkAG[Ci@CUAQDEBu@`BQ^ELIPEFSL[Y[Y_@]a@_@][_@]][_@]i@c@c@a@e@a@e@c@g@e@yCqCkAiA_@_@i@g@OOUUc@c@m@m@k@i@w@u@m@k@e@g@s@q@w@w@a@a@]]a@_@w@u@m@m@w@w@q@s@USYWWU[W??SUOOMKMGEEKGGE@m@RMTSf@c@rAmAd@q@\\]tAqAhAiAv@w@HKJMFMDCHGLIDEDGFGDIFAFA???AFEBCDGHELMFGhAmALOTSb@c@t@s@FIFKDMHq@Jy@RDF@FAB?DABCDC@EBIBUBUXoCFo@Fk@H_AL{AHcA?OCOG[M}@K_AUmCSgCScCUcCGw@IgAK_BGm@MsACYE_@Iq@AGCIGKc@a@u@q@SQ??GCKCIAE?M@g@BaAF}ALy@Hk@DWBw@Fk@B]Bo@De@DW@kBLw@Fo@BuBLEo@Cc@HKL?b@CTA^CZC^A??\\CXCVATCRAVCZC\\CZE^EZCZC\\C\\CZA^CRAHAPCVC\\A\\C^CXC^CZC^CRAH?H???PAJ@N@PDTJNFHDJHVRVR^\\RPVPf@TVHNF`@Jd@JJBF@FKFMBG@G?MCQEG[IOEIC??KC[MSIUGGA_@KMEQAEAGCSEOEKCSK_@OKEMEMEKAMCMA[AQ?M?[B]B]BU@UB??_@BY@UBY@]BS@S@YBU@[BYB_@B]D[B]B[B]B]B]BYDWBU@]B]B]@W?Q@Y?G???G?CE??CEEECAGAG?G@EDCBCDIBODUFg@FmAHuBNuEXWBa@@Y@a@AWCSCSEOEOGOG??GCOKOKQK??ECGCKKGIIOCICGGYCOCOYuBKu@M_AM}@M_Ag@oDGe@CSGg@Ik@OgAOgAOeAQoAAK??E[GWKWCKGKGMGKa@s@Wg@[i@{@wA[i@EIGIEEEIMWMYWc@Ue@Wc@c@u@i@_AQ[OYy@uAiAiBSa@c@_AMOCECIEKCOAQ?MBODOBMFODMJITUTS`@_@`@]Z[TSPOJKLKPQj@g@z@w@\\[VW^_@LOPOVYPSTU??VYPS^a@^a@Z]VYr@y@h@o@HIFKJMHI^q@V]Xa@l@}@n@{@p@gAbAcBv@uArA_C^o@b@s@JONWPW^m@f@w@??FK\\q@z@aBd@_AXi@`@{@z@cBP]NW`@u@^s@rAaCt@sAbAiB~@eBfAqBhAsBl@iAf@_Ab@u@d@{@NYN[^u@`AsBVg@N[P_@|@oBZs@??^w@N]PWVa@TYPURUTYHG\\]VUZY`@[XUBEFORSPONMJMLODEFMFMFOFWBS@U??C[AMEWGSIOKSKOKOe@m@]e@[a@SQWYW]QWMSO[Q_@O_@Oi@Sq@GYEUGs@_@wCSwAQwAUeBUuB??WyBYgCE_@G_@OiAOmAOeAE[Go@Gi@Gc@Ge@Ge@Ik@Ea@DK@EAOAMEc@EWC]E[Ec@E_@ASAMMiAIw@??Gi@Iq@COE[Iq@AKAMIq@M{@UeBIm@SyAMcAa@{COmAOkAa@eDMaAKy@Gm@i@gEUkBOiAIw@QsAIs@Io@K_A??Ik@QuACWQwAMgAKu@MiAK{@OiAOsAQ{AOkAKs@QeAGs@IgAQuAK}@EUEWGe@Ko@G[Ky@[_CIq@ScBIm@??Gm@KeAK_AGg@Ks@E]EUQ}AEQCOCQGa@Go@E]I}@CUEYE]EOUiBE[K}@OkAIm@Ea@EYE]M_AA?Gg@OqAm@}EMaAIq@Ky@Io@Gg@Ge@MgA]qCMoAIgAUsBMoAI{@Ku@OkAK_AKu@Ky@Gg@Gc@?OAOGo@Gm@Iw@??CWC_@Eq@Eg@Ks@Ec@Ik@I}@Iq@OuAIcAK}@K{@Iy@Ga@Ii@M_AOiAOcAGc@Ic@O}@EYCQGg@Ic@M}@E]G_@??ScBKo@K}@M_ACOAMEg@KcAOaBCWGeAG_AAYCUQuBa@qDQeBMuAIkAI{@Gs@C[KSCe@Gw@Ec@Cg@G}@??Eo@Ek@IiAEy@K}AIaAI{AK_BK}AKaBEm@Eo@Ea@CaAGo@Eo@G{@G_ACKASCc@E{@EOGm@AQCOMoAW_CIy@Gq@G}@Ew@I}@?GGs@Es@Eq@Ek@Ei@Eo@M_BIoAEg@@_@As@Eu@Cs@C_A?WC[A_@Co@Ew@Ac@A_@@s@?OAQ??GgACk@CWC[Ci@CYGi@E]C]E[Iw@Gu@C_@Em@C_@CWEWAg@Ca@KcAE[E]IqAEo@C_@Eo@@q@B]??BODOHOLS\\WDERSLOFQFUBMBODMFOHOJKRM\\Op@Yr@[^ONGPI|@c@v@_@l@WXMlAk@XM??NIj@YRIXMZMZKn@S`@KRE~AWFAFKBG?I@EAG?GCICEEEKEI@s@PMDKFc@NOHWLYN]Py@`@uBbA_Ad@??_Ab@s@\\y@`@MFSJSHe@Ty@Zm@Le@J]BUB_@DWBQ@_@B]@Q@I@kBPw@Fa@DOBwAJ_@@sBL}@Dy@H{@F[B]Du@Fw@JUBWDq@JG@_@Jg@La@JYHa@J]He@L[HWH??_@JKBOBSBUAGAUEQCGASKWOMK]WIGGGqAkAg@e@g@c@YWm@m@SSSSg@g@WUUSe@c@o@m@a@_@IG??OMWQ?Q?KCI?G@Q@Q@U?K?K?KBK@KDMBKDKNa@JYP_@N]Te@P_@LWRe@Ra@P_@Na@??N]Pc@Ra@Vm@JWP]LQJOJMHGHG\\UFGHIFIFKLWDKBIBIBIDW?KBQ?]BQ@KBIDOHYJU??Vk@N]Xq@FOFSDSH_@D[BWJ}ADEBC@E@G?G?EAGAGGEEEGAG?G?GBEBEDCFqAV]DiAJ??cBNU?SAAECEGEIAI?C?I@IDCBEDCF?FBDBDDBFBH@H?HAJEp@Et@Gp@Gt@Gj@Gf@En@AFDBP@J@PANARCPCTEXETKXQb@Qb@O^c@|@Y\\WZa@VOLKJUVGNKZCJCNKt@?`@??CZAHENCJGJMZQb@Q^S`@Qb@Sd@Uh@MVQ`@Sb@O\\MZS`@O\\MZKVO^SXKLIH[T]XI@E?E@KBGBGBKHGHEFEHCHAHAFAH?J?LBNHT?N?H?NAFAJAHCJENITO^KZUd@KTGNIHGHMLIFMLG@EBEFCF?F@FDJ@LAF?DAFIPSf@KTQ`@Wj@OXQXGHKLKJ_@\\}@x@k@j@s@p@SRGFGDGBIBg@LMAI?IBIFCHCJ?LAPETEHEFWVGFIA??EAECCCCEEGAG??EMOe@[{@[}@Yw@Y{@y@aCu@cCqBv@r@~BJVPf@\\bAt@zBj@dBJZJZVt@@D@D?L?FAD?HCPGDaA|@URk@j@ONSPa@^EBGDKFKDIBOBOBM?K?O?UCMEMQQKUOOMKMMQYs@CKIWY_AISEGEEMKOc@M_@EOEO]}@GGMKMGCBa@Td@tARj@X|@Nb@FTBP@J?TeA~@i@f@WVkAjAsApAg@b@WTUPy@TMLg@b@u@n@??qAlAMOECECGCGAIAI@G@EBEBABCDEHCLAL?H?D@HBFJNk@l@k@h@wArA[Xe@f@g@d@u@p@q@n@SN??QLWNWNUJi@TMFMDc@NCOCICECGEEEEIGICMEG?I?K@E@E?GBCBKFEFEFEHCH?D??AF?F?F??y@JiDN_@@_@?]?Q?SA",
+                    "tarifa": 7.1,
+                    "cidade": "HORTOLANDIA (TERMINAL METROPOLITANO HORTOLANDIA)",
+                    "sequencia": 0.0,
+                    "pontos": [
+                        {
+                            "latitude": -22.866922,
+                            "longitude": -47.225591,
+                            "endereco": "Terminal Metropolitano de Hortolândia",
+                            "raio": 100.0,
+                            "sequencia": 0.0,
+                            "id": 48042.0
+                        },
+                        {
+                            "latitude": -22.869421,
+                            "longitude": -47.220752,
+                            "endereco": "Parque Hortolândia O/L - Parque Ortolândia, Hortolândia - SP, 13183-091, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 1.0,
+                            "id": 89904.0
+                        },
+                        {
+                            "latitude": -22.875037,
+                            "longitude": -47.20656,
+                            "endereco": "Estação de Transferência Pinheiros",
+                            "raio": 150.0,
+                            "sequencia": 2.0,
+                            "id": 93851.0
+                        },
+                        {
+                            "latitude": -22.873864,
+                            "longitude": -47.209338,
+                            "endereco": "Parada Metropolitana Parque Gabriel",
+                            "raio": 20.0,
+                            "sequencia": 3.0,
+                            "id": 48400.0
+                        },
+                        {
+                            "latitude": -22.87121,
+                            "longitude": -47.216182,
+                            "endereco": "Remanso Campineiro L/O - Parque Sao Miguel, Hortolândia - SP, 13184-526, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 4.0,
+                            "id": 89901.0
+                        },
+                        {
+                            "latitude": -22.869001,
+                            "longitude": -47.21855,
+                            "endereco": "Rua Nelson Pereira Bueno, 425 - Vila Sao Francisco, Hortolândia - SP, 13184-235, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 5.0,
+                            "id": 93849.0
+                        },
+                        {
+                            "latitude": -22.864488,
+                            "longitude": -47.218248,
+                            "endereco": "Rua Nelson Pereira Bueno, 25 - Vila Sao Francisco, Hortolândia - SP, 13183-091, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 6.0,
+                            "id": 93850.0
+                        },
+                        {
+                            "latitude": -22.863185,
+                            "longitude": -47.21952,
+                            "endereco": "R. Luís Camilo de Camargo, 99 - Jardim Santana, Hortolândia - SP, 13184-535, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 7.0,
+                            "id": 97838.0
+                        },
+                        {
+                            "latitude": -22.86246,
+                            "longitude": -47.219312,
+                            "endereco": "Rua Argolino de Moraes, 260 - Vila Sao Francisco, Hortolândia - SP, 13183-091, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 8.0,
+                            "id": 51434.0
+                        },
+                        {
+                            "latitude": -22.8623,
+                            "longitude": -47.217341,
+                            "endereco": "Rua Argolino de Moraes, 450 - Vila Sao Francisco, Hortolândia - SP, 13183-091, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 9.0,
+                            "id": 1817.0
+                        },
+                        {
+                            "latitude": -22.863861,
+                            "longitude": -47.216736,
+                            "endereco": "Rua Zacarias Costa Camargo, 433 - Parada Paulistão - Lot. Remanso Campineiro, Hortolândia - SP, 13183-091, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 10.0,
+                            "id": 1818.0
+                        },
+                        {
+                            "latitude": -22.865184,
+                            "longitude": -47.214775,
+                            "endereco": "Rua João Camilo de Camargo, 200 - Parada João Camilo de Camargo - Lot. Remanso Campineiro, Hortolândia - SP, 13186-033, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 11.0,
+                            "id": 19047.0
+                        },
+                        {
+                            "latitude": -22.865204,
+                            "longitude": -47.211816,
+                            "endereco": "R. João Camilo de Camargo, 500a - Remanso Campineiro, Hortolândia - SP, 13184-290, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 12.0,
+                            "id": 99396.0
+                        },
+                        {
+                            "latitude": -22.865466,
+                            "longitude": -47.208493,
+                            "endereco": "Rua José Agostinho, 70 - Jardim Santana, Hortolândia - SP, 13184-510, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 13.0,
+                            "id": 48049.0
+                        },
+                        {
+                            "latitude": -22.867999,
+                            "longitude": -47.204997,
+                            "endereco": "R. José Agostinho, 554 - Jardim Santana, Hortolândia - SP, 13184-510, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 14.0,
+                            "id": 48050.0
+                        },
+                        {
+                            "latitude": -22.869703,
+                            "longitude": -47.202857,
+                            "endereco": "Rua José Agostinho, 850 - Jardim Santana, Hortolândia - SP, 13184-555, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 15.0,
+                            "id": 19051.0
+                        },
+                        {
+                            "latitude": -22.871065,
+                            "longitude": -47.2012,
+                            "endereco": "Rua Flamboyant, 50 - Parque dos Pinheiros, Hortolândia - SP, 13184-621, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 16.0,
+                            "id": 22839.0
+                        },
+                        {
+                            "latitude": -22.865251,
+                            "longitude": -47.200101,
+                            "endereco": "Rua Severino José da Silva, 50 - Jardim Minda, Hortolândia - SP, 13184-672, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 17.0,
+                            "id": 93833.0
+                        },
+                        {
+                            "latitude": -22.862691,
+                            "longitude": -47.200359,
+                            "endereco": "Rua Jurandir Silvério - Jardim São Jorge, Hortolândia - SP, 13184-671, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 18.0,
+                            "id": 100349.0
+                        },
+                        {
+                            "latitude": -22.860786,
+                            "longitude": -47.199087,
+                            "endereco": "Rua Goiás - Jardim São Jorge, Hortolândia - SP, 13183-312, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 19.0,
+                            "id": 99651.0
+                        },
+                        {
+                            "latitude": -22.85932,
+                            "longitude": -47.197629,
+                            "endereco": "Rua Goiás - Jardim São Jorge, Hortolândia - SP, 13183-091, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 20.0,
+                            "id": 99799.0
+                        },
+                        {
+                            "latitude": -22.857596,
+                            "longitude": -47.195968,
+                            "endereco": "R. Minas Gerais, 201 - Jardim São Jorge, Hortolândia - SP, 13183-321, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 21.0,
+                            "id": 99800.0
+                        },
+                        {
+                            "latitude": -22.856518,
+                            "longitude": -47.194945,
+                            "endereco": "Rua Minas Gerais, 200, Hortolândia - SP, 13183-091, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 22.0,
+                            "id": 99801.0
+                        },
+                        {
+                            "latitude": -22.854547,
+                            "longitude": -47.192372,
+                            "endereco": "R. Cobrasma, 645 - Jardim Bom Retiro (Nova Veneza), Sumaré - SP, 13181-602, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 23.0,
+                            "id": 99199.0
+                        },
+                        {
+                            "latitude": -22.856493,
+                            "longitude": -47.190439,
+                            "endereco": "R. Cobrasma, 353 - Jardim Bom Retiro (Nova Veneza), Sumaré - SP, 13181-602, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 24.0,
+                            "id": 99200.0
+                        },
+                        {
+                            "latitude": -22.858469,
+                            "longitude": -47.188141,
+                            "endereco": "R. Cobrasma, 25 - Jardim Bom Retiro (Nova Veneza), Sumaré - SP, 13181-602, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 25.0,
+                            "id": 100126.0
+                        },
+                        {
+                            "latitude": -22.85903,
+                            "longitude": -47.186436,
+                            "endereco": "R. João Antônio Corrêa, 4 - Parque Bandeirantes I (Nova Veneza), Sumaré - SP, 13181-782, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 26.0,
+                            "id": 99803.0
+                        },
+                        {
+                            "latitude": -22.859081,
+                            "longitude": -47.184462,
+                            "endereco": "R. Leonir Dutra Pereira, 580 - Parque Bandeirantes I (Nova Veneza), Sumaré - SP, 13181-712, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 27.0,
+                            "id": 99804.0
+                        },
+                        {
+                            "latitude": -22.858744,
+                            "longitude": -47.182434,
+                            "endereco": "Rua Alair Moreira, 230 - Parque Bandeirantes I (Nova Veneza), Sumaré - SP, 13181-750, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 28.0,
+                            "id": 99805.0
+                        },
+                        {
+                            "latitude": -22.857814,
+                            "longitude": -47.178851,
+                            "endereco": "Rua Alair Moreira, 714 - Jardim Nova Europa, Sumaré - SP, 13181-775, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 29.0,
+                            "id": 61785.0
+                        },
+                        {
+                            "latitude": -22.855316,
+                            "longitude": -47.178871,
+                            "endereco": "R. Ezequiel Alves de Souza, 429 - Parque Bandeirantes I (Nova Veneza), Sumaré - SP, 13181-775, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 30.0,
+                            "id": 99785.0
+                        },
+                        {
+                            "latitude": -22.85309,
+                            "longitude": -47.179155,
+                            "endereco": "R. Ezequiel Alves de Souza, 187 - Parque Bandeirantes I (Nova Veneza), Sumaré - SP, 13181-775, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 31.0,
+                            "id": 99786.0
+                        },
+                        {
+                            "latitude": -22.85924,
+                            "longitude": -47.178627,
+                            "endereco": "Av. Cristóvão Colombo, 159 - Jardim Nova Europa, Hortolândia - SP, 13184-851, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 32.0,
+                            "id": 99787.0
+                        },
+                        {
+                            "latitude": -22.851764,
+                            "longitude": -47.178731,
+                            "endereco": "SMR-385 Estr. Municipal Américo Ribeiro dos Santos, norte - Jardim Sao Judas Tadeu (Nova Veneza), Sumaré - SP, 13183-091, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 33.0,
+                            "id": 50712.0
+                        },
+                        {
+                            "latitude": -22.84628,
+                            "longitude": -47.171253,
+                            "endereco": "R. Antônio Sanches Lopes, 4 - Jardim Aclimacao (Nova Veneza), Sumaré - SP, 13180-622, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 34.0,
+                            "id": 93642.0
+                        },
+                        {
+                            "latitude": -22.849823,
+                            "longitude": -47.160538,
+                            "endereco": "Rodovia Anhanguera - SP 330, km. 105,5 ",
+                            "raio": 20.0,
+                            "sequencia": 35.0,
+                            "id": 3135.0
+                        },
+                        {
+                            "latitude": -22.854376,
+                            "longitude": -47.153401,
+                            "endereco": "Rodovia Anhanguera - SP 330, km. 104,7 ",
+                            "raio": 20.0,
+                            "sequencia": 36.0,
+                            "id": 3136.0
+                        },
+                        {
+                            "latitude": -22.855976,
+                            "longitude": -47.133395,
+                            "endereco": "132850379 - Jardim Chapadão, Campinas - Sp, 13092-599, Brasil - Jardim Chapadão, Campinas - SP, 13069-300, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 37.0,
+                            "id": 35724.0
+                        },
+                        {
+                            "latitude": -22.850736,
+                            "longitude": -47.107917,
+                            "endereco": "SPM-065 E Rod. Dom Pedro I, km 142,1 sul - Jardim Santa Monica, Campinas - SP, 13092-599, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 38.0,
+                            "id": 4928.0
+                        },
+                        {
+                            "latitude": -22.848791,
+                            "longitude": -47.097864,
+                            "endereco": "Rodovia Dom Pedro Campinas - São Paulo, Brasil - Chácaras Campos dos Amarais, Campinas - SP, 13092-599, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 39.0,
+                            "id": 67444.0
+                        },
+                        {
+                            "latitude": -22.847068,
+                            "longitude": -47.089223,
+                            "endereco": "Marginal da Rodovia Dom Pedro I (SP 065), 6129 ",
+                            "raio": 20.0,
+                            "sequencia": 40.0,
+                            "id": 35732.0
+                        },
+                        {
+                            "latitude": -22.847698,
+                            "longitude": -47.060526,
+                            "endereco": "Avenida Guilherme Campos, 500 (Shopping Parque Dom Pedro I)",
+                            "raio": 100.0,
+                            "sequencia": 41.0,
+                            "id": 4764.0
+                        },
+                        {
+                            "latitude": -22.834781,
+                            "longitude": -47.057302,
+                            "endereco": "Av. José Próspero Jacobucci, 167 - Cidade Universitária, Campinas - SP, 13086-090, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 42.0,
+                            "id": 93915.0
+                        },
+                        {
+                            "latitude": -22.836121,
+                            "longitude": -47.054764,
+                            "endereco": "Av. José Próspero Jacobucci, 187 - Cidade Universitária, Campinas - SP, 13086-090, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 43.0,
+                            "id": 50506.0
+                        },
+                        {
+                            "latitude": -22.835058,
+                            "longitude": -47.052943,
+                            "endereco": "PUC Campinas",
+                            "raio": 20.0,
+                            "sequencia": 44.0,
+                            "id": 96225.0
+                        },
+                        {
+                            "latitude": -22.836415,
+                            "longitude": -47.053415,
+                            "endereco": "Av. José Próspero Jacobucci, 28 - Parque Das Universidades, Campinas - Sp, 13086-090, Brasil - Parque das Universidades, Campinas - SP, 13086-090, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 45.0,
+                            "id": 91660.0
+                        },
+                        {
+                            "latitude": -22.83542,
+                            "longitude": -47.055165,
+                            "endereco": "Av. José Próspero Jacobucci, 262 - Parque das Universidades, Campinas - SP, 13086-090, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 46.0,
+                            "id": 99250.0
+                        },
+                        {
+                            "latitude": -22.834464,
+                            "longitude": -47.057276,
+                            "endereco": "Av. José Próspero Jacobucci, 534 - Cidade Universitária, Campinas - SP, 13086-090, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 47.0,
+                            "id": 99251.0
+                        },
+                        {
+                            "latitude": -22.831474,
+                            "longitude": -47.062872,
+                            "endereco": "Av. Adolfo Lutz - CEPRE 1 - Cidade Universitária, Campinas - SP, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 48.0,
+                            "id": 67849.0
+                        },
+                        {
+                            "latitude": -22.828463,
+                            "longitude": -47.064532,
+                            "endereco": "R. Vital Brasil, 329 - Cidade Universitária, Campinas - SP, 13083-888, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 49.0,
+                            "id": 97708.0
+                        },
+                        {
+                            "latitude": -22.827799,
+                            "longitude": -47.062971,
+                            "endereco": "R. Vital Brasil, 1 - Cidade Universitária, Campinas - SP, 13083-888, Brasil",
+                            "raio": 100.0,
+                            "sequencia": 50.0,
+                            "id": 42475.0
+                        },
+                        {
+                            "latitude": -22.827808,
+                            "longitude": -47.066763,
+                            "endereco": "Avenida Adolfo Lutz, 343-435",
+                            "raio": 20.0,
+                            "sequencia": 51.0,
+                            "id": 46455.0
+                        },
+                        {
+                            "latitude": -22.825721,
+                            "longitude": -47.066168,
+                            "endereco": "Avenida Oswaldo Cruz (UNICAMP)",
+                            "raio": 20.0,
+                            "sequencia": 52.0,
+                            "id": 45385.0
+                        },
+                        {
+                            "latitude": -22.824841,
+                            "longitude": -47.06555,
+                            "endereco": "Av. Oswaldo Cruz com Av. Cândido Portinari - Cidade Universitária, Campinas - SP, 13083-871, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 53.0,
+                            "id": 46457.0
+                        },
+                        {
+                            "latitude": -22.824194,
+                            "longitude": -47.067722,
+                            "endereco": "Rua Roxo Moreira - Parada Unicamp/Reitoria - Cidade Universitária, Campinas - SP, 13083-590, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 54.0,
+                            "id": 50721.0
+                        },
+                        {
+                            "latitude": -22.822754,
+                            "longitude": -47.068931,
+                            "endereco": "Rua Roxo Moreira (Praça da Paz)",
+                            "raio": 20.0,
+                            "sequencia": 55.0,
+                            "id": 48265.0
+                        },
+                        {
+                            "latitude": -22.816509,
+                            "longitude": -47.072597,
+                            "endereco": "Av. Érico Verissimo - Portão G1 (entrando no campus) - Cidade Universitária, Campinas - SP, 13083-851, Brasil",
+                            "raio": 100.0,
+                            "sequencia": 56.0,
+                            "id": 50723.0
+                        }
+                    ],
+                    "corredor": null,
+                    "tempo": 75.0,
+                    "qtdPontos": 57.0,
+                    "idTipoSentido": 1.0,
+                    "horarios": "5:00,6:10,7:40,9:10,11:30,12:50,14:10,15:30,16:50,18:40,21:00,22:10",
+                    "sentido": "ida",
+                    "distancia": 35.40385258492313,
+                    "raioCerca": 25.0,
+                    "idEmpresa": null,
+                    "destino": "CAMPINAS (UNICAMP)",
+                    "id": 8251.0,
+                    "idLinha": 2113.0,
+                    "tp": "HORTOLANDIA (TERMINAL METROPOLITANO DE HORTOLANDIA)",
+                    "codigoLinha": "746",
+                    "status": "Em Operacao",
+                    "ts": "CAMPINAS (UNICAMP)",
+                    "horariosdiasuteis": "5:00,6:10,7:40,9:10,11:30,12:50,14:10,15:30,16:50,18:40,21:00,22:10",
+                    "horariossabados": "5:00,7:50,11:40,14:40,17:00,20:20,22:30",
+                    "horariosdomingosferiados": "5:00,7:50,11:40,14:40,17:00,20:20,22:30"
+                },
+                {
+                    "consorcio": "BUS +",
+                    "encode": "dlgjCb{h~GQ@I?Y?i@?k@Ak@EUCOA[EYGOESGYKYMUMMIUOSQOOKKKMW[g@o@GIEIIS@ABE?E???GAGEEEAEAE@EBA@ABAD?D@HBD@LFNJNZd@DFDFLNX\\TTNNHFFDPLPJFD??ZNZLHBPFPDTFRDNBRBRB\\BZ@P@P?R@V?l@CT?\\CbBI`@CNALA`@EBLFNBDBBFBHB??F@H@H?F?JADABAJEFEBCFGDIBGDOVIRKNINGRITKXO\\SDCPMd@_@NMNMf@c@b@_@RS??XWTUPQl@m@p@o@l@m@r@u@F@F@HAJCHEDEFI@EBGJ?vAuAn@m@XUTSd@c@b@c@jAgATUn@k@b@a@^_@lAiATUv@m@DEDGFE@?DAB@HLHL^|ABLDJFJFHFFHDPHPBV?T?NAPAb@G^Gb@MZQh@c@bA}@??fAcAhAeAfCcCh@g@JGBADEBEBG@C?G?GAGCGGGECGAE?G?G@GDCDABABCH?NAJAHCP??GLED]\\GAEAEACCEECGIWOc@_@eAY{@Um@o@kBWu@M]Qo@c@uAk@TYJk@TRp@Z`AFRHTVr@\\`AXz@\\fAZ`ARl@Vr@HT@B@D?F?F?HALCRmAfAIH_@\\k@j@m@h@MHOHMDQDK@I@O@QAQAGAMEq@QE?C@GDCF?D?F@F@DBFFLJ@F@R?NAJ?^E`@GXEXINGJGHE^]b@_@v@s@n@m@l@i@`@_@Z[|@{@p@o@VUPQHIFGJOn@m@j@k@d@c@tBsBPORUHKFILSP[Tk@HUTg@Rg@Pa@JWDKFIBGDCHIBEDGJUN_@FM??JSFKVq@FQLSHKHIXSXQPOPEHCPOJKJQBIBKDM?G?KAIAO@I?I??@S@Q?S@S@K@GDOBKDKJWFQJWJWP_@JUP]Tg@N[P_@Xm@Pc@Pc@JWFMLWVm@JW\\o@??JMNOFGHGZUJGHKJOLWDIDMBKBK@GBI@]@Q?OD]FWFQHS^y@LYZw@DKDOBIBKBI@M??BMDWBYDi@Dq@@CBADI@G?G?ICGACEECCICGAG@E@GDCBCDABQDOBSDUDSB_@D??[BWB[B_@D]BO@O@I?QCAEACGCGCGAG@G@IBGFEFAF@DBFDDD@HBL?HADABADAJAZCTAZCTCZC`@E\\CZEXC\\CRAN?L?BDBF@H@F?F@H?FAPCXEXCPEXADITO^IRQb@IRMVUd@STUZOLQJSNOLMPKNEJGPEPEPE`@CP?N?JCZ?DCJCJCLGLWl@??KVINGNQ\\MZEJWj@Sd@Q`@OZQ`@Q`@Yn@KTKVYp@GNSXWVWRa@ZI@I@KBGBEBMHGHGHCFCHCJAJ?L?H@H@JBHBHHLFFDDFDJDLDL@H@N?PCHEFCPNVV\\XTTVTPPTRNLLJ\\\\l@h@^^fA`AbA`AfA~@`@\\d@`@XRLHNHPJRFZDF?^Bf@CFAf@Md@KPIPGj@Ql@S`A[dA]BANGREVGZI`@KZIxAUREZEl@Gp@I`@C\\C\\Er@I|@Kp@Ib@ETCHAJANALAXCXA^Cr@Gb@CD?LARCJARCVCRCNCVCRANCFA^GRCRE`@Kl@Kf@Sr@]hAi@r@[f@Ud@UXMXMZO^SNG\\O`@OPGZK\\K`@Kn@K^Gd@I@CBEBG@C@I?GAICKCEGEKEYF_@JMDKDc@PUJULWLqDfB{Ar@{At@q@\\YLULOFYLa@R]LKDOFm@Lg@Jk@FYBS@OBM@M@U@U@K?M@e@DYBg@D]D]BUBMBQEOCSGIEGGIMEMAGAM?I@K@IDKFKHIJGLEF?FAH?D@LBB@DBHFDDDFDLDNLZB\\B`@Fv@Dp@??LdBJ|AJ~AJzAHrADt@Dv@DbAP~DH|AHbAHdAHjAFx@B\\D^N~ADd@Df@J|AJzALhBJbB\\rENtBLdB??XdELlBLnBNrBLlBTzCJxAHzADp@Bf@Dd@Dd@@N@NF`@J|A@NBRBr@FfAD`AJ`BHdAFp@Ht@Fz@Fn@Fn@Hn@??B\\RxBJ|AJ~AJtAAP@^Dz@FjA@\\@^FnBBx@@T?ZCNGb@Kr@BP\\|@HXDVBRDd@BVBNDXFVNt@HRHRVlBVlBZvBXzBZzBXpBXxBHj@@NBVD`@LfALdAXdCJ`AFb@?DAf@Bj@@T@VJt@DXBNHb@Lh@DPJPDVD`@TvB`@~DJz@@RB^NnA@PF\\Jt@DT??DX`@nC^bCTxANjAPpAPvAb@nDHl@Hl@PvAPvARzAPrANnAPxAR~A??RxAXbCHn@L~@L`AVnBLt@RjA^xBFbAFdAJ`BDLDLFb@L|@Jt@Jv@JdANhALjALhANdAJx@BRHl@VzBL`A??D`@Fb@Hp@HbA@FPjA\\lCZbCVpB\\lCZdC??L`AL`ALbAL~@\\nCFd@Hf@Jz@DVBVHl@Hn@Hn@R|AHl@Hn@LbAHl@Hn@ZdCZbCDZLhAP`BP~AHv@Jt@\\fCN`AL|@RrAF`@Jh@F^BDDBHDBP`@hDPvANnAJz@Hn@BRHj@Lx@??PnAR|APrAZbCJ`ALfANfAJx@Fd@J~@DRDNBLD\\LpAFn@F|ABl@Dn@B\\@^Bb@DxA?^?`@A^A^Gb@E^IPUt@M`@Un@Wl@INMPSf@Qd@c@`Ac@~@_@v@Wh@{@fB]t@KTU`@uAhCm@jAS^U`@c@v@i@~@q@lAk@dAU^S\\_A~Ac@t@_@n@g@~@Yj@Q\\g@~@KRSb@]r@a@v@Wf@MTm@fAWd@g@~@c@v@S^k@dA_@r@[h@c@v@{@zAYh@]l@w@rAWd@EHWb@SZQXk@|@k@|@MROT}@nAy@jAQTUZcAnAu@`A[\\QPgAlAYXWX{@z@u@t@w@v@MLQNSNMLs@n@YXi@f@m@n@IFYVa@ZKHIHm@h@WVSPk@j@c@`@qAhAqAjAg@d@[XYVO@KDOBQ?I?KCMEMIKKGMEMAKAQ?MBSDKFMFKLKJGLCLAN?JBD@HBHDLHJJPTTXRXFHHJ??TVf@l@^b@JLJTFLBLBP?LAPCJEJ??CHGFMNUJMBM@QAKCMCEEECKMEKEKCO?Q@QDUHSDMFOTQTSTU^]^_@^a@VW^]TU??LGLELCN?L@NBLDHFHFJL`@v@FLLZVj@JVLVBDVf@Zd@Xb@z@tAPXJRFJHLJRJRTd@JP??LXFJFFHHFHDBLLDJ^n@Xh@JPT`@n@jAXf@T`@JRLf@Lj@F\\XlBLx@Hn@Jn@Hj@RzAd@nDf@xDT~A??BRDVFZDZDZBZBPBP@NBH`@\\F?JCLBPBRDTJPFPDNBJBV@P@b@@L?f@CZAbAG^Cb@C??`AGn@Ef@Ep@Ed@C`@C^CJ?XAJ?JBD@B?B?F?DCBABC@C\\C\\C\\ANAZCVATAZCNAPAJANAJAZCPAXCNA\\EZE\\CZCRAXCZC\\A\\CLANANCZC\\AZC\\CZCRAXCZCPAN???XAL@N@PDb@PNJRNVRNLPN\\ZPJHFZNTJJBLDND\\HVFNDD?FKFMDO?GAIAMEGQEUGMCKEOGWKOGMCKCKC[KSAOEYIQEKEWKUKOESIIAOCOAQ?YAM?Q@YBUB??U@WBU@Y@WBW@[BYB_@@Q@]B[B[BYB]D_@BYBYBS@]Ba@B]B]DUBO@_@B]BQ?Q@K?K?Y@Y@GMEEEAGAE?GBEBCDCDAF?F@FBDHJJHBRB\\@VPAn@En@Cd@Cx@Gh@Er@Eh@ELA^Cf@Cb@C`@Ed@Cd@Cd@En@Gp@G|AM^CvAIN@NDDBNL\\Zz@v@DDBF@D@D@DHp@TbCHv@F`AHbAJxAHz@JhA\\dENfBLvA@TJz@L~@FXDTCZGn@OhBGp@Gh@MvA[vCCJABCBCBE@E?G@IA??QEkEgAoA`HMXUJGIIGIIIEICIC??G?IAM?M@I@GBIBGBGBOJKJGJEHGJCLAL?F?N@B@H?HDPFNDHFHFFBDDBHF}@nDiBdBKHw@QqAYY|AUpAKf@CX?RAJ?LRLRLPNLLLNRPp@l@ZV\\^\\\\r@r@x@v@d@d@d@b@\\\\`@^ZZ??ZZf@h@j@h@ZZRR`@^\\\\RRZXf@f@n@l@XXbAbAv@t@x@v@|@z@x@v@fB~An@j@h@d@z@t@ZX^\\z@x@|@v@LLLL`@^z@v@??v@r@t@p@b@^h@d@PL\\Vn@d@FIBEDMLe@FUVeAXkARy@FWPm@FWHYDSnBn@r@T`@PRJPJVRLJXR\\Tv@j@??XR\\VPLTTFBLFJADAFEHOFSBO@W?KJW??HGHG`@A\\XFDTTXVJHVXTV\\^Qx@OPIJ??_@f@UZ_@h@UZc@l@k@t@i@r@UZc@n@k@|@_@l@m@|@sAnBuBdDi@v@i@z@g@v@MNw@fA{@jAe@v@i@z@_@n@EHGNERAPAT?P??BRJ`ALdAFd@D`@NnAHn@Hr@NhANlABT@V?N?VErAGtAIpBAVAVAh@Ad@AZChAErAClACl@An@Ez@?ACp@Cl@Cj@Ct@GjACTnABbAFn@DdCB`A@`@@^@nBDt@@~@BjBDt@Bf@@^@hCDlA@l@@`@DNg@v@gCv@mCt@oCZkA??XcAdA}D`@wAPo@Ru@Vy@Rq@^oANg@Ne@Nk@Jc@Ne@Ty@Rs@Tu@Zs@Ti@^_AJ[FWbAmDPm@Le@Ng@XiAL]DOFSNe@Lg@Ro@Ru@Nc@Vu@JYNo@Ne@Nk@Ha@H_@MOECC?IBOH?@IXGTEh@Oj@k@pBW`AIX??a@zAa@|AYVOf@Sv@W`AK\\g@`Bi@fBOd@IZCLELY`AKZK\\_@xAa@zAs@pC[fA]fASp@]jAo@xBcB~F_@rA]lASp@k@hBiApDM^E`@AJCJELOh@Sr@Ux@g@lBOb@K\\]lAq@bCeApDc@zASl@e@bBK`@Sz@On@U|@W`Am@GYE]Ey@MQCKCKAKAGHGRAJCP?L???PBJBDHF\\Dd@D",
+                    "tarifa": 7.1,
+                    "cidade": "CAMPINAS (UNICAMP)",
+                    "sequencia": 0.0,
+                    "pontos": [
+                        {
+                            "latitude": -22.816509,
+                            "longitude": -47.072597,
+                            "endereco": "Av. Érico Verissimo - Portão G1 (entrando no campus) - Cidade Universitária, Campinas - SP, 13083-851, Brasil",
+                            "raio": 100.0,
+                            "sequencia": 0.0,
+                            "id": 50723.0
+                        },
+                        {
+                            "latitude": -22.814233,
+                            "longitude": -47.071476,
+                            "endereco": "Av. Érico Veríssimo - Ginásio/Fef - Cidade Universitária Campinas - Sp 13083-851 Brasil - Cidade Universitária, Campinas - SP, 13083-851, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 1.0,
+                            "id": 45763.0
+                        },
+                        {
+                            "latitude": -22.814234,
+                            "longitude": -47.071891,
+                            "endereco": "Av. Érico Verissimo - Ginásio/FEF - Cidade Universitária, Campinas - SP, 13083-851, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 2.0,
+                            "id": 45393.0
+                        },
+                        {
+                            "latitude": -22.816381,
+                            "longitude": -47.072866,
+                            "endereco": "Av. Érico Verissimo - Portão G1 (saindo do campus) - Cidade Universitária, Campinas - SP, 13083-851, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 3.0,
+                            "id": 67907.0
+                        },
+                        {
+                            "latitude": -22.819234,
+                            "longitude": -47.072425,
+                            "endereco": "Av. Martin Luther King - Cidade Universitária, Campinas - SP, 13083-874, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 4.0,
+                            "id": 45394.0
+                        },
+                        {
+                            "latitude": -22.821598,
+                            "longitude": -47.070375,
+                            "endereco": "R. Roxo Moreira, 1302 - Cidade Universitária, Campinas - SP, 13083-591, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 5.0,
+                            "id": 45396.0
+                        },
+                        {
+                            "latitude": -22.824897,
+                            "longitude": -47.067396,
+                            "endereco": "R. Roxo Moreira, 1778 - Cidade Universitária, Campinas - SP, 13083-592, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 6.0,
+                            "id": 45767.0
+                        },
+                        {
+                            "latitude": -22.827342,
+                            "longitude": -47.067606,
+                            "endereco": "Av. Adolfo Lutz - Hospital Sobrapar - Jardim Santa Genebra, Campinas - SP, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 7.0,
+                            "id": 42473.0
+                        },
+                        {
+                            "latitude": -22.828783,
+                            "longitude": -47.066228,
+                            "endereco": "Avenida Adolfo Lutz (oposto ao Restaurante Lanchonete Afrodite)",
+                            "raio": 20.0,
+                            "sequencia": 8.0,
+                            "id": 42474.0
+                        },
+                        {
+                            "latitude": -22.828463,
+                            "longitude": -47.064532,
+                            "endereco": "R. Vital Brasil, 329 - Cidade Universitária, Campinas - SP, 13083-888, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 9.0,
+                            "id": 97708.0
+                        },
+                        {
+                            "latitude": -22.827799,
+                            "longitude": -47.062971,
+                            "endereco": "R. Vital Brasil, 1 - Cidade Universitária, Campinas - SP, 13083-888, Brasil",
+                            "raio": 100.0,
+                            "sequencia": 10.0,
+                            "id": 42475.0
+                        },
+                        {
+                            "latitude": -22.827808,
+                            "longitude": -47.066763,
+                            "endereco": "Avenida Adolfo Lutz, 343-435",
+                            "raio": 20.0,
+                            "sequencia": 11.0,
+                            "id": 46455.0
+                        },
+                        {
+                            "latitude": -22.831751,
+                            "longitude": -47.062827,
+                            "endereco": "Av. Adolfo Lutz - oposto Fonoaudiologia - Jardim Santa Genebra, Campinas - SP, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 12.0,
+                            "id": 45773.0
+                        },
+                        {
+                            "latitude": -22.834781,
+                            "longitude": -47.057302,
+                            "endereco": "Av. José Próspero Jacobucci, 167 - Cidade Universitária, Campinas - SP, 13086-090, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 13.0,
+                            "id": 93915.0
+                        },
+                        {
+                            "latitude": -22.836121,
+                            "longitude": -47.054764,
+                            "endereco": "Av. José Próspero Jacobucci, 187 - Cidade Universitária, Campinas - SP, 13086-090, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 14.0,
+                            "id": 50506.0
+                        },
+                        {
+                            "latitude": -22.835058,
+                            "longitude": -47.052943,
+                            "endereco": "PUC Campinas",
+                            "raio": 20.0,
+                            "sequencia": 15.0,
+                            "id": 96225.0
+                        },
+                        {
+                            "latitude": -22.836415,
+                            "longitude": -47.053415,
+                            "endereco": "Av. José Próspero Jacobucci, 28 - Parque Das Universidades, Campinas - Sp, 13086-090, Brasil - Parque das Universidades, Campinas - SP, 13086-090, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 16.0,
+                            "id": 91660.0
+                        },
+                        {
+                            "latitude": -22.83542,
+                            "longitude": -47.055165,
+                            "endereco": "Av. José Próspero Jacobucci, 262 - Parque das Universidades, Campinas - SP, 13086-090, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 17.0,
+                            "id": 99250.0
+                        },
+                        {
+                            "latitude": -22.834464,
+                            "longitude": -47.057276,
+                            "endereco": "Av. José Próspero Jacobucci, 534 - Cidade Universitária, Campinas - SP, 13086-090, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 18.0,
+                            "id": 99251.0
+                        },
+                        {
+                            "latitude": -22.847698,
+                            "longitude": -47.060526,
+                            "endereco": "Avenida Guilherme Campos, 500 (Shopping Parque Dom Pedro I)",
+                            "raio": 100.0,
+                            "sequencia": 19.0,
+                            "id": 4764.0
+                        },
+                        {
+                            "latitude": -22.847657,
+                            "longitude": -47.060087,
+                            "endereco": "Av. Guilherme Campos, 505 - Jardim Santa Genebra, Campinas - SP, 13087-635, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 20.0,
+                            "id": 4765.0
+                        },
+                        {
+                            "latitude": -22.846009,
+                            "longitude": -47.088775,
+                            "endereco": "Marginal Rodovia Dom Pedro I, 22 - Barão Geraldo, Campinas - SP, 13080-655, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 21.0,
+                            "id": 4766.0
+                        },
+                        {
+                            "latitude": -22.848007,
+                            "longitude": -47.098653,
+                            "endereco": "CEASA Campinas - Barão Geraldo, Campinas - SP, 13092-599, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 22.0,
+                            "id": 67908.0
+                        },
+                        {
+                            "latitude": -22.850099,
+                            "longitude": -47.108167,
+                            "endereco": "Rodovia Dom Pedro I - SP 065, 784 ",
+                            "raio": 20.0,
+                            "sequencia": 23.0,
+                            "id": 4768.0
+                        },
+                        {
+                            "latitude": -22.855455,
+                            "longitude": -47.150385,
+                            "endereco": "Rodovia Anhanguera - SP 330, km. 104,3",
+                            "raio": 20.0,
+                            "sequencia": 24.0,
+                            "id": 3830.0
+                        },
+                        {
+                            "latitude": -22.850223,
+                            "longitude": -47.158619,
+                            "endereco": "Rodovia Anhanguera - SP 330, km. 105,3",
+                            "raio": 20.0,
+                            "sequencia": 25.0,
+                            "id": 3137.0
+                        },
+                        {
+                            "latitude": -22.846008,
+                            "longitude": -47.164192,
+                            "endereco": "Rodovia Anhanguera - SP 330, km. 106,1 ",
+                            "raio": 20.0,
+                            "sequencia": 26.0,
+                            "id": 2796.0
+                        },
+                        {
+                            "latitude": -22.851817,
+                            "longitude": -47.17896,
+                            "endereco": "Estr. Mun. Américo Ribeiro dos Santos Smr-385, 47 - Jardim Bandeirantes, Sumaré - SP, 13181-715, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 27.0,
+                            "id": 99791.0
+                        },
+                        {
+                            "latitude": -22.853167,
+                            "longitude": -47.179274,
+                            "endereco": "R. Ezequiel Alves de Souza, 40 - Parque Bandeirantes I (Nova Veneza), Sumaré - SP, 13181-775, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 28.0,
+                            "id": 99792.0
+                        },
+                        {
+                            "latitude": -22.855559,
+                            "longitude": -47.178967,
+                            "endereco": "R. Luís Ventriche, 16 - Parque Bandeirantes I (Nova Veneza), Sumaré - SP, 13181-761, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 29.0,
+                            "id": 99793.0
+                        },
+                        {
+                            "latitude": -22.857647,
+                            "longitude": -47.178887,
+                            "endereco": "Rua Alair Moreira, 715 - Jardim Sao Judas Tadeu (Nova Veneza), Sumaré - SP, 13181-775, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 30.0,
+                            "id": 99794.0
+                        },
+                        {
+                            "latitude": -22.858619,
+                            "longitude": -47.182526,
+                            "endereco": "Rua Alair Moreira, 231 - Parque Bandeirantes I (Nova Veneza), Sumaré - SP, 13181-750, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 31.0,
+                            "id": 99795.0
+                        },
+                        {
+                            "latitude": -22.858873,
+                            "longitude": -47.184183,
+                            "endereco": "Rua Alair Moreira, 99 - Parque Bandeirantes I (Nova Veneza), Sumaré - SP, 13181-750, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 32.0,
+                            "id": 99796.0
+                        },
+                        {
+                            "latitude": -22.858964,
+                            "longitude": -47.186146,
+                            "endereco": "Rua Dr. Fernando Ruiz Neto - Parque Bandeirantes I (Nova Veneza), Sumaré - SP, 13181-710, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 33.0,
+                            "id": 99797.0
+                        },
+                        {
+                            "latitude": -22.858344,
+                            "longitude": -47.188113,
+                            "endereco": "R. Cobrasma, 20 - Jardim Bom Retiro (Nova Veneza), Sumaré - SP, 13181-602, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 34.0,
+                            "id": 99798.0
+                        },
+                        {
+                            "latitude": -22.855976,
+                            "longitude": -47.19032,
+                            "endereco": "R. Bernadeta Maria de Oliveira, 47 - Jardim Bom Retiro (Nova Veneza), Sumaré - SP, 13181-630, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 35.0,
+                            "id": 99219.0
+                        },
+                        {
+                            "latitude": -22.855359,
+                            "longitude": -47.191395,
+                            "endereco": "Rua Cobrasma, 490 - Jardim Bom Retiro (Nova Veneza), Sumaré - SP, 13183-091, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 36.0,
+                            "id": 40996.0
+                        },
+                        {
+                            "latitude": -22.854136,
+                            "longitude": -47.19264,
+                            "endereco": "R. Alegria da Encarnação, 604 - Jardim Bom Retiro (Nova Veneza), Sumaré - SP, 13181-633, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 37.0,
+                            "id": 99220.0
+                        },
+                        {
+                            "latitude": -22.856135,
+                            "longitude": -47.194719,
+                            "endereco": "R. Maranhão, 141 - Jardim São Jorge, Hortolândia - SP, 13183-320, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 38.0,
+                            "id": 99806.0
+                        },
+                        {
+                            "latitude": -22.85727,
+                            "longitude": -47.19584,
+                            "endereco": "R. Mato Grosso, 20, Hortolândia - SP, 13183-313, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 39.0,
+                            "id": 99807.0
+                        },
+                        {
+                            "latitude": -22.858994,
+                            "longitude": -47.197519,
+                            "endereco": "R. Goiás, 620 - Jardim Sao Jorge II, Hortolândia - SP, 13183-312, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 40.0,
+                            "id": 99808.0
+                        },
+                        {
+                            "latitude": -22.86101,
+                            "longitude": -47.199516,
+                            "endereco": "R. Goiás, 954 - Jardim São Jorge, Hortolândia - SP, 13183-312, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 41.0,
+                            "id": 99643.0
+                        },
+                        {
+                            "latitude": -22.864196,
+                            "longitude": -47.202376,
+                            "endereco": "Rua Goiás - Jardim Minda, Hortolândia - SP, 13184-680, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 42.0,
+                            "id": 93831.0
+                        },
+                        {
+                            "latitude": -22.866541,
+                            "longitude": -47.201012,
+                            "endereco": "Rua Nossa Senhora do Carmo, 360 - Jardim Minda, Hortolândia - SP, 13184-672, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 43.0,
+                            "id": 99809.0
+                        },
+                        {
+                            "latitude": -22.868701,
+                            "longitude": -47.201651,
+                            "endereco": "R. Eliza Laurinda da Silva, 84 A - Jardim Santana, Hortolândia - SP, 13184-553, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 44.0,
+                            "id": 98871.0
+                        },
+                        {
+                            "latitude": -22.867,
+                            "longitude": -47.204988,
+                            "endereco": "Rua Luís Camilo de Camargo, 1755 - Jardim Santana, Hortolândia - SP, 13184-420, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 45.0,
+                            "id": 18272.0
+                        },
+                        {
+                            "latitude": -22.865524,
+                            "longitude": -47.20702,
+                            "endereco": "Rua Luís Camilo de Camargo, 1475 - Jardim Santana, Hortolândia - SP, 13184-554, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 46.0,
+                            "id": 93976.0
+                        },
+                        {
+                            "latitude": -22.864192,
+                            "longitude": -47.210885,
+                            "endereco": "Rua Luís Camilo de Camargo, 825 - Assaí - Lot. Remanso Campineiro, Hortolândia - SP, 13184-420, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 47.0,
+                            "id": 48349.0
+                        },
+                        {
+                            "latitude": -22.86452,
+                            "longitude": -47.213312,
+                            "endereco": "Rua Luís Camilo de Camargo, 817 - Parada São Francisco de Assis - Lot. Remanso Campineiro, Hortolândia - SP, 13183-091, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 48.0,
+                            "id": 18273.0
+                        },
+                        {
+                            "latitude": -22.864309,
+                            "longitude": -47.215984,
+                            "endereco": "Rua Luís Camilo de Camargo, 511 - Lot. Remanso Campineiro, Hortolândia - SP, 13183-091, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 49.0,
+                            "id": 50750.0
+                        },
+                        {
+                            "latitude": -22.864866,
+                            "longitude": -47.218528,
+                            "endereco": "Rua Nelson Pereira Bueno, 100 - Vila Sao Francisco, Hortolândia - SP, 13183-091, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 50.0,
+                            "id": 93854.0
+                        },
+                        {
+                            "latitude": -22.869761,
+                            "longitude": -47.218819,
+                            "endereco": "Rua Nelson Pereira Bueno, 590 - Vila Sao Francisco, Hortolândia - SP, 13184-235, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 51.0,
+                            "id": 93855.0
+                        },
+                        {
+                            "latitude": -22.871322,
+                            "longitude": -47.215987,
+                            "endereco": "Parada Remanso Campineiro leste - Parque Sao Miguel, Hortolândia - SP, 13184-526, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 52.0,
+                            "id": 48363.0
+                        },
+                        {
+                            "latitude": -22.874041,
+                            "longitude": -47.209094,
+                            "endereco": "Parada Parque Gabriel leste - Parque Gabriel, Hortolândia - SP, 13184-526, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 53.0,
+                            "id": 90459.0
+                        },
+                        {
+                            "latitude": -22.873864,
+                            "longitude": -47.209338,
+                            "endereco": "Parada Metropolitana Parque Gabriel",
+                            "raio": 20.0,
+                            "sequencia": 54.0,
+                            "id": 48400.0
+                        },
+                        {
+                            "latitude": -22.87121,
+                            "longitude": -47.216182,
+                            "endereco": "Remanso Campineiro L/O - Parque Sao Miguel, Hortolândia - SP, 13184-526, Brasil",
+                            "raio": 20.0,
+                            "sequencia": 55.0,
+                            "id": 89901.0
+                        },
+                        {
+                            "latitude": -22.869378,
+                            "longitude": -47.220982,
+                            "endereco": "Parada Metropolitana Parque Hortolândia",
+                            "raio": 20.0,
+                            "sequencia": 56.0,
+                            "id": 89902.0
+                        },
+                        {
+                            "latitude": -22.866922,
+                            "longitude": -47.225591,
+                            "endereco": "Terminal Metropolitano de Hortolândia",
+                            "raio": 100.0,
+                            "sequencia": 57.0,
+                            "id": 48042.0
+                        }
+                    ],
+                    "corredor": null,
+                    "tempo": 75.0,
+                    "qtdPontos": 58.0,
+                    "idTipoSentido": 2.0,
+                    "horarios": "6:20,7:40,9:10,10:30,12:50,14:10,15:30,16:50,18:20,20:00,22:15,23:20",
+                    "sentido": "volta",
+                    "distancia": 37.92501048713092,
+                    "raioCerca": 25.0,
+                    "idEmpresa": null,
+                    "destino": "HORTOLANDIA (TERMINAL METROPOLITANO HORTOLANDIA)",
+                    "id": 8252.0,
+                    "idLinha": 2113.0,
+                    "tp": "HORTOLANDIA (TERMINAL METROPOLITANO DE HORTOLANDIA)",
+                    "codigoLinha": "746",
+                    "status": "Em Operacao",
+                    "ts": "CAMPINAS (UNICAMP)",
+                    "horariosdiasuteis": "6:20,7:40,9:10,10:30,12:50,14:10,15:30,16:50,18:20,20:00,22:15,23:20",
+                    "horariossabados": "6:25,9:15,13:05,15:50,18:10,21:30,23:30",
+                    "horariosdomingosferiados": "6:25,9:15,13:05,15:50,18:10,21:30,23:30"
+                }
+            ],
+            "corredor": null,
+            "id": 2113.0,
+            "tp": "HORTOLANDIA (TERMINAL METROPOLITANO DE HORTOLANDIA)",
+            "velocidadeMedia": 34,
+            "ts": "CAMPINAS (UNICAMP)",
+            "mediaHistorica": 35,
+            "status": "NORMAL"
+        }
+    ]
+}
