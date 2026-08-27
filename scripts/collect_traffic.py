@@ -5,6 +5,10 @@ import json
 import os
 from datetime import datetime
 from scripts.gtfs_sampler import get_sampled_routes, haversine
+from dotenv import load_dotenv
+
+env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env')
+load_dotenv(dotenv_path=env_path)
 
 DB_NAME = 'data/emtu_transito.db'
 TOMTOM_API_KEY = os.environ.get('TOMTOM_API_KEY') 

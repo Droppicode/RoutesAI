@@ -2,6 +2,12 @@ import requests
 import json
 
 import os
+from dotenv import load_dotenv
+
+# Carrega o .env da pasta raiz (um nível acima de scripts/)
+env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env')
+load_dotenv(dotenv_path=env_path)
+
 API_KEY = os.environ.get("TOMTOM_API_KEY")
 points = [
     {"lon": -47.22564, "lat": -22.86701},

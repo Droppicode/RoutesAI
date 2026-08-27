@@ -2,6 +2,11 @@ import requests
 import json
 
 import os
+from dotenv import load_dotenv
+
+env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env')
+load_dotenv(dotenv_path=env_path)
+
 API_KEY = os.environ.get("TOMTOM_API_KEY")
 # Bounding box ao redor da grande São Paulo (sempre tem acidentes/obras)
 # formato: minLon,minLat,maxLon,maxLat
