@@ -29,6 +29,10 @@ cd RoutesAI
 mkdir artesp_gtfs
 # Extract your routes.txt, shapes.txt, stop_times.txt, etc., into this directory.
 
+# Environment Variables Setup
+# Create a `.env` file in the root directory and add your TomTom API key:
+echo "TOMTOM_API_KEY=your_api_key_here" > .env
+
 # Setup virtual environment
 python -m venv venv
 source venv/bin/activate
