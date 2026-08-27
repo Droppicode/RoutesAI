@@ -1,0 +1,6 @@
+*.db
+.venv/
+__pycache__/
+scratch/
+artesp_gtfs/
+.env

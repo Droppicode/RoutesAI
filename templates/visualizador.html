@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Trânsito | RoutesAI</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .historical-panel {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: rgba(20, 20, 25, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            color: #fff;
+            width: 350px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .historical-panel h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        .btn-search {
+            width: 100%;
+            padding: 10px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn-search:hover {
+            background: #2563eb;
+        }
+        .legend {
+            margin-top: 20px;
+            font-size: 0.85rem;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .color-box {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+        #map {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="historical-panel">
+        <h2><i class="fa-solid fa-clock-rotate-left"></i> Histórico DB</h2>
+        
+        <div class="form-group">
+            <label for="linhaSelect">Linha</label>
+            <select id="linhaSelect" style="width: 100%;">
+                <option value="">Carregando...</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="horarioSelect">Data e Hora</label>
+            <select id="horarioSelect" style="width: 100%;">
+                <option value="">Selecione a linha primeiro</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Sentido</label>
+            <div style="display: flex; gap: 10px;">
+                <button id="btnIda" class="btn-search" style="flex: 1; background: #3b82f6;" onclick="setDirection('0')">Ida</button>
+                <button id="btnVolta" class="btn-search" style="flex: 1; background: #1e3a8a;" onclick="setDirection('1')">Volta</button>
+            </div>
+        </div>
+
+        <button class="btn-search" onclick="buscarDados()">Visualizar</button>
+
+        <div class="legend" id="legendBox" style="display: none;">
+            <strong>Legenda de Trânsito:</strong>
+            <div class="legend-item"><div class="color-box" style="background: #10b981;"></div> Livre (Sem atraso)</div>
+            <div class="legend-item"><div class="color-box" style="background: #f59e0b;"></div> Moderado (+ de 10s/seg)</div>
+            <div class="legend-item"><div class="color-box" style="background: #ef4444;"></div> Intenso (+ de 30s/seg)</div>
+            <div class="legend-item"><div class="color-box" style="background: #7f1d1d;"></div> Parado (+ de 60s/seg)</div>
+            
+            <div style="margin-top: 10px;" id="statsInfo"></div>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <script>
+        const map = L.map('map', { zoomControl: false }).setView([-23.5505, -46.6333], 11);
+        L.control.zoom({ position: 'bottomright' }).addTo(map);
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+            subdomains: 'abcd',
+            maxZoom: 20
+        }).addTo(map);
+
+        let transitoLayerGroup = L.featureGroup().addTo(map);
+        let veiculosLayerGroup = L.layerGroup().addTo(map);
+        let rotaBaseLayerGroup = L.featureGroup().addTo(map);
+        let currentDirection = '0'; // '0' para Ida, '1' para Volta
+
+        const busIcon = L.divIcon({
+            className: 'bus-marker',
+            html: '<div style="background: #3b82f6; width: 14px; height: 14px; border-radius: 50%; border: 2px solid white; box-shadow: 0 0 5px rgba(0,0,0,0.5);"></div>',
+            iconSize: [18, 18],
+            iconAnchor: [9, 9]
+        });
+
+        function decodePolyline(str, precision) {
+            let index = 0, lat = 0, lng = 0, coordinates = [], shift = 0, result = 0, byte = null, latitude_change, longitude_change, factor = Math.pow(10, precision || 5);
+            while (index < str.length) {
+                byte = null; shift = 0; result = 0;
+                do { byte = str.charCodeAt(index++) - 63; result |= (byte & 0x1f) << shift; shift += 5; } while (byte >= 0x20);
+                latitude_change = ((result & 1) ? ~(result >> 1) : (result >> 1));
+                shift = result = 0;
+                do { byte = str.charCodeAt(index++) - 63; result |= (byte & 0x1f) << shift; shift += 5; } while (byte >= 0x20);
+                longitude_change = ((result & 1) ? ~(result >> 1) : (result >> 1));
+                lat += latitude_change; lng += longitude_change;
+                coordinates.push([lat / factor, lng / factor]);
+            }
+            return coordinates;
+        }
+
+        function getColorForDelay(delay) {
+            if (delay < 10) return '#10b981'; // Green
+            if (delay < 30) return '#f59e0b'; // Yellow
+            if (delay < 60) return '#ef4444'; // Red
+            return '#7f1d1d'; // Dark Red
+        }
+
+        function findClosestIndex(lat, lng, path) {
+            let minIdx = 0;
+            let minD = Infinity;
+            for (let i = 0; i < path.length; i++) {
+                // Distância euclidiana simples serve bem para este nível de precisão
+                let d = Math.pow(path[i][0] - lat, 2) + Math.pow(path[i][1] - lng, 2);
+                if (d < minD) {
+                    minD = d;
+                    minIdx = i;
+                }
+            }
+            return minIdx;
+        }
+
+        $(document).ready(function() {
+            // Inicializar selects
+            $('#linhaSelect').select2({ placeholder: "Carregando linhas...", dropdownCssClass: "dark-select2" });
+            $('#horarioSelect').select2({ placeholder: "Aguardando linha...", dropdownCssClass: "dark-select2" });
+
+            // Buscar linhas disponíveis no banco
+            fetch('/api/linhas_db')
+                .then(r => r.json())
+                .then(linhas => {
+                    $('#linhaSelect').empty().append(new Option("Selecione uma linha...", ""));
+                    linhas.forEach(l => {
+                        $('#linhaSelect').append(new Option(l, l));
+                    });
+                    $('#linhaSelect').select2({ placeholder: "Selecione uma linha...", dropdownCssClass: "dark-select2" });
+                });
+
+            // Quando mudar a linha, carregar os horários
+            $('#linhaSelect').on('change', function() {
+                const linha = $(this).val();
+                if (!linha) return;
+
+                $('#horarioSelect').empty().append(new Option("Carregando horários...", ""));
+                
+                fetch(`/api/horarios/${linha}`)
+                    .then(r => r.json())
+                    .then(horarios => {
+                        $('#horarioSelect').empty().append(new Option("Selecione um horário...", ""));
+                        horarios.forEach(h => {
+                            $('#horarioSelect').append(new Option(h, h));
+                        });
+                        $('#horarioSelect').select2({ placeholder: "Selecione um horário...", dropdownCssClass: "dark-select2" });
+                    });
+            });
+        });
+
+        function setDirection(dir) {
+            currentDirection = dir;
+            if (dir === '0') {
+                $('#btnIda').css('background', '#3b82f6');
+                $('#btnVolta').css('background', '#1e3a8a');
+            } else {
+                $('#btnIda').css('background', '#1e3a8a');
+                $('#btnVolta').css('background', '#3b82f6');
+            }
+            // Se já tiver linha e horário selecionado, refaz a busca
+            if ($('#linhaSelect').val() && $('#horarioSelect').val()) {
+                buscarDados();
+            }
+        }
+
+        async function buscarDados() {
+            const linha = $('#linhaSelect').val();
+            const horario = $('#horarioSelect').val();
+
+            if (!linha || !horario) {
+                alert("Por favor, selecione uma linha e um horário.");
+                return;
+            }
+
+            $('.btn-search').not('#btnIda, #btnVolta').text("Carregando...");
+            transitoLayerGroup.clearLayers();
+            veiculosLayerGroup.clearLayers();
+            rotaBaseLayerGroup.clearLayers();
+
+            try {
+                // 1. Busca os detalhes da linha (EMTU) para desenhar a rota base
+                const linhaRes = await fetch(`/api/linha/${linha}`);
+                const linhaData = await linhaRes.json();
+                
+                let basePath = []; // Para guardar as coordenadas da rota base
+
+                if (linhaData.linhas && linhaData.linhas.length > 0) {
+                    const l = linhaData.linhas[0];
+                    if (l.rotas && l.rotas.length > 0) {
+                        const strSentido = currentDirection === '0' ? 'ida' : 'volta';
+                        let rotaInfo = l.rotas.find(r => r.sentido.toLowerCase() === strSentido);
+                        if (!rotaInfo) rotaInfo = l.rotas[0]; // fallback
+                        
+                        if (rotaInfo && rotaInfo.encode) {
+                            basePath = decodePolyline(rotaInfo.encode);
+                            const basePolyline = L.polyline(basePath, {
+                                color: '#1e3a8a', // Azul escuro para a base
+                                weight: 4,
+                                opacity: 0.5,
+                                lineJoin: 'round'
+                            }).addTo(rotaBaseLayerGroup);
+                            
+                            map.fitBounds(basePolyline.getBounds(), { padding: [50, 50] });
+                        }
+                    }
+                }
+
+                // 2. Busca os dados de trânsito e veículos do banco local para aquele sentido
+                const dbRes = await fetch(`/api/dados_mapa?linha=${linha}&horario=${horario}&sentido=${currentDirection}`);
+                const data = await dbRes.json();
+                
+                $('.btn-search').not('#btnIda, #btnVolta').text("Visualizar");
+                $('#legendBox').show();
+
+                let totalSegments = 0;
+                let totalAtraso = 0;
+
+                if (data.transito && data.transito.length > 0) {
+                    data.transito.forEach(seg => {
+                        let subPath = [];
+
+                        if (basePath.length > 0) {
+                            // Encontrar os índices mais próximos na rota base
+                            const idxOrigem = findClosestIndex(seg.shape_origem_lat, seg.shape_origem_lon, basePath);
+                            const idxDestino = findClosestIndex(seg.shape_destino_lat, seg.shape_destino_lon, basePath);
+                            
+                            const startIdx = Math.min(idxOrigem, idxDestino);
+                            const endIdx = Math.max(idxOrigem, idxDestino);
+                            
+                            subPath = basePath.slice(startIdx, endIdx + 1);
+                        }
+
+                        // Fallback: se não tiver rota base ou se os pontos caírem no mesmo índice
+                        if (subPath.length < 2) {
+                            subPath = [
+                                [seg.shape_origem_lat, seg.shape_origem_lon],
+                                [seg.shape_destino_lat, seg.shape_destino_lon]
+                            ];
+                        }
+                        
+                        const color = getColorForDelay(seg.duracao_atraso_segundos);
+                        totalAtraso += seg.duracao_atraso_segundos;
+                        totalSegments++;
+
+                        const polyline = L.polyline(subPath, {
+                            color: color,
+                            weight: 8, // Mais grosso que a rota base
+                            opacity: 0.9,
+                            lineCap: 'round'
+                        }).addTo(transitoLayerGroup);
+
+                        polyline.bindPopup(`
+                            <b>Segmento</b><br>
+                            Distância: ${seg.distancia_metros}m<br>
+                            Duração Normal: ${seg.duracao_normal_segundos}s<br>
+                            Duração Trânsito: ${seg.duracao_transito_segundos}s<br>
+                            <b>Atraso: ${seg.duracao_atraso_segundos}s</b>
+                        `);
+                    });
+                }
+
+                if (data.veiculos && data.veiculos.length > 0) {
+                    const strSentidoVeiculo = currentDirection === '0' ? 'ida' : 'volta';
+                    data.veiculos.forEach(v => {
+                        const sVeiculo = (v.sentidoLinha || '').toLowerCase();
+                        if (sVeiculo === strSentidoVeiculo || sVeiculo === currentDirection || sVeiculo === '') {
+                            L.marker([v.latitude, v.longitude], { icon: busIcon })
+                                .bindPopup(`
+                                    <b>Prefixo: ${v.prefixo}</b><br>
+                                    Placa: ${v.placa}<br>
+                                    Velocidade: ${v.velocidade} km/h<br>
+                                    Sentido: ${v.sentidoLinha}
+                                `)
+                                .addTo(veiculosLayerGroup);
+                        }
+                    });
+                }
+
+                // Conta os veículos visíveis na tela
+                const qtdVeiculos = veiculosLayerGroup.getLayers().length;
+
+                $('#statsInfo').html(`
+                    <div>Segmentos mapeados: <b>${totalSegments}</b></div>
+                    <div>Atraso Total: <b>${totalAtraso}s</b></div>
+                    <div>Veículos ativos no sentido: <b>${qtdVeiculos}</b></div>
+                `);
+
+            } catch (err) {
+                console.error(err);
+                $('.btn-search').not('#btnIda, #btnVolta').text("Visualizar");
+                alert("Erro ao buscar dados.");
+            }
+        }
+    </script>
+</body>
+</html>

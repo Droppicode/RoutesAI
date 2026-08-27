@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel EMTU | RoutesAI</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1><i class="fa-solid fa-bus-simple"></i> Painel EMTU</h1>
+        <p class="subtitle">Monitoramento em Tempo Real</p>
+        
+        <div class="search-container">
+            <select id="lineSelect" style="width: 100%;">
+                <option value="">Selecione uma linha...</option>
+            </select>
+            <button id="searchBtn" onclick="monitorLine()"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <div class="status-panel">
+            <div class="status-item">
+                <span class="status-label">Status</span>
+                <span class="status-value" id="statusValue">Aguardando...</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Última Atualização</span>
+                <span class="status-value" id="lastUpdateValue">--:--:--</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Veículos no Sentido</span>
+                <span class="status-value" id="activeBusesValue">-</span>
+            </div>
+        </div>
+    </header>
+
+    <div id="detailsPanel" class="details-panel" style="display: none;">
+        <h2>Detalhes da Rota</h2>
+        
+        <div class="direction-toggle">
+            <button id="btnIda" class="direction-btn active" onclick="setDirection('ida')">Ida</button>
+            <button id="btnVolta" class="direction-btn" onclick="setDirection('volta')">Volta</button>
+        </div>
+
+        <div class="detail-item">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <div>
+                <strong>Origem:</strong> <span id="pontoInicial"></span>
+            </div>
+        </div>
+        <div class="detail-item">
+            <i class="fa-solid fa-flag-checkered"></i>
+            <div>
+                <strong>Destino:</strong> <span id="pontoFinal"></span>
+            </div>
+        </div>
+        
+        <div class="horarios-section">
+            <h3><i class="fa-regular fa-clock"></i> Horários (Dias Úteis)</h3>
+            <div class="horarios-list" id="horariosUteis"></div>
+            
+            <h3><i class="fa-regular fa-clock"></i> Horários (Sábados)</h3>
+            <div class="horarios-list" id="horariosSabados"></div>
+            
+            <h3><i class="fa-regular fa-clock"></i> Horários (Domingos/Feriados)</h3>
+            <div class="horarios-list" id="horariosDomingos"></div>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <!-- jQuery (required for Select2) -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <!-- Select2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <script>
+        // Init map
+        const map = L.map('map', {
+            zoomControl: false
+        }).setView([-22.9068, -47.0616], 12); // Default Campinas
+
+        L.control.zoom({
+            position: 'bottomright'
+        }).addTo(map);
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+            subdomains: 'abcd',
+            maxZoom: 20
+        }).addTo(map);
+
+        let updateInterval;
+        let routeLayerGroup = L.featureGroup().addTo(map);
+        let busLayerGroup = L.layerGroup().addTo(map);
+        let currentLineId = null;
+        let currentDirection = 'ida'; // 'ida' ou 'volta'
+        let currentData = null; // Store last fetched data
+
+        const busIcon = L.divIcon({
+            className: 'bus-marker',
+            iconSize: [20, 20],
+            iconAnchor: [10, 10],
+            popupAnchor: [0, -10]
+        });
+
+        const stopIcon = L.divIcon({
+            className: 'stop-marker',
+            iconSize: [12, 12],
+            iconAnchor: [6, 6],
+            popupAnchor: [0, -6]
+        });
+
+        const terminusIcon = L.divIcon({
+            className: 'terminus-marker',
+            iconSize: [16, 16],
+            iconAnchor: [8, 8],
+            popupAnchor: [0, -8]
+        });
+
+        function decodePolyline(str, precision) {
+            let index = 0, lat = 0, lng = 0, coordinates = [], shift = 0, result = 0, byte = null, latitude_change, longitude_change, factor = Math.pow(10, precision || 5);
+            while (index < str.length) {
+                byte = null; shift = 0; result = 0;
+                do { byte = str.charCodeAt(index++) - 63; result |= (byte & 0x1f) << shift; shift += 5; } while (byte >= 0x20);
+                latitude_change = ((result & 1) ? ~(result >> 1) : (result >> 1));
+                shift = result = 0;
+                do { byte = str.charCodeAt(index++) - 63; result |= (byte & 0x1f) << shift; shift += 5; } while (byte >= 0x20);
+                longitude_change = ((result & 1) ? ~(result >> 1) : (result >> 1));
+                lat += latitude_change; lng += longitude_change;
+                coordinates.push([lat / factor, lng / factor]);
+            }
+            return coordinates;
+        }
+
+        // Initialize App
+        $(document).ready(function() {
+            // Load lines from GTFS
+            fetch('/api/linhas')
+                .then(res => res.json())
+                .then(data => {
+                    const select = $('#lineSelect');
+                    data.linhas.forEach(linha => {
+                        select.append(new Option(linha.nome, linha.id));
+                    });
+                    select.select2({
+                        placeholder: "Busque pelo nº ou nome...",
+                        dropdownCssClass: "dark-select2"
+                    });
+                    
+                    // Auto-select 746 for demo if it exists
+                    select.val('746').trigger('change');
+                    monitorLine();
+                });
+        });
+
+        function renderHorarios(containerId, horariosStr) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+            if (!horariosStr || horariosStr.trim() === '') {
+                container.innerHTML = '<span class="pill muted">Sem horários</span>';
+                return;
+            }
+            const horarios = horariosStr.split(',');
+            horarios.forEach(h => {
+                const pill = document.createElement('span');
+                pill.className = 'pill';
+                pill.innerText = h.trim();
+                container.appendChild(pill);
+            });
+        }
+
+        function setDirection(dir) {
+            currentDirection = dir;
+            document.getElementById('btnIda').classList.remove('active');
+            document.getElementById('btnVolta').classList.remove('active');
+            
+            if(dir === 'ida') {
+                document.getElementById('btnIda').classList.add('active');
+            } else {
+                document.getElementById('btnVolta').classList.add('active');
+            }
+
+            if (currentData) {
+                renderData(currentData, true);
+            }
+        }
+
+        async function monitorLine() {
+            const inputVal = $('#lineSelect').val();
+            if (!inputVal) return;
+            
+            currentLineId = inputVal;
+            currentDirection = 'ida'; // Reset to ida on new line
+            document.getElementById('btnIda').classList.add('active');
+            document.getElementById('btnVolta').classList.remove('active');
+            
+            if (updateInterval) clearInterval(updateInterval);
+            routeLayerGroup.clearLayers();
+            busLayerGroup.clearLayers();
+            currentData = null;
+            
+            document.getElementById('statusValue').innerHTML = '<span style="color:var(--text-secondary)">Carregando...</span>';
+            document.getElementById('detailsPanel').style.display = 'none';
+            
+            await fetchData(true);
+            updateInterval = setInterval(() => fetchData(false), 10000);
+        }
+
+        async function fetchData(isInitial) {
+            try {
+                const response = await fetch(`/api/linha/${currentLineId}`);
+                const data = await response.json();
+                
+                if (data.erro || !data.linhas || data.linhas.length === 0) {
+                    document.getElementById('statusValue').innerHTML = `<span style="color:var(--danger)">Sem dados ativos</span>`;
+                    return;
+                }
+
+                currentData = data.linhas[0];
+                renderData(currentData, isInitial);
+
+            } catch (error) {
+                console.error("Erro ao buscar dados:", error);
+                document.getElementById('statusValue').innerHTML = `<span style="color:var(--danger)">Falha na Conexão</span>`;
+            }
+        }
+
+        function renderData(linha, updateRouteAndMap) {
+            document.getElementById('statusValue').innerHTML = `<div class="live"><div class="pulse"></div> Monitorando</div>`;
+            document.getElementById('lastUpdateValue').innerText = new Date().toLocaleTimeString('pt-BR');
+
+            // Find route for current direction
+            let rota = null;
+            if (linha.rotas && linha.rotas.length > 0) {
+                rota = linha.rotas.find(r => r.sentido.toLowerCase() === currentDirection);
+                if (!rota) rota = linha.rotas[0]; // fallback
+            }
+
+            if (rota) {
+                // Populate details panel
+                document.getElementById('pontoInicial').innerText = rota.tp || 'N/A';
+                document.getElementById('pontoFinal').innerText = rota.ts || 'N/A';
+                
+                renderHorarios('horariosUteis', rota.horariosdiasuteis);
+                renderHorarios('horariosSabados', rota.horariossabados);
+                renderHorarios('horariosDomingos', rota.horariosdomingosferiados);
+                
+                document.getElementById('detailsPanel').style.display = 'flex';
+                
+                if (updateRouteAndMap) {
+                    routeLayerGroup.clearLayers();
+                    if (rota.encode) {
+                        const path = decodePolyline(rota.encode);
+                        const polyline = L.polyline(path, {
+                            color: '#3b82f6',
+                            weight: 5,
+                            opacity: 0.7,
+                            lineJoin: 'round'
+                        }).addTo(routeLayerGroup);
+                        
+                        map.fitBounds(polyline.getBounds(), { padding: [50, 50] });
+                    }
+
+                    if (rota.pontos) {
+                        rota.pontos.forEach((ponto, index) => {
+                            let icon = stopIcon;
+                            let title = "Parada";
+                            
+                            if (index === 0) {
+                                icon = terminusIcon;
+                                title = "Origem: " + rota.tp;
+                            } else if (index === rota.pontos.length - 1) {
+                                icon = terminusIcon;
+                                title = "Destino: " + rota.ts;
+                            }
+
+                            L.marker([ponto.latitude, ponto.longitude], { icon: icon })
+                                .bindPopup(`<b>${title}</b><br/>${ponto.endereco || 'Sem endereço'}`)
+                                .addTo(routeLayerGroup);
+                        });
+                    }
+                }
+            }
+
+            // Filter vehicles by direction
+            busLayerGroup.clearLayers();
+            let activeBuses = 0;
+            if (linha.veiculos) {
+                linha.veiculos.forEach(v => {
+                    // Check if sentidolinha matches current direction. 
+                    // Sometimes API might not have it or have it uppercase.
+                    const sentidoVeiculo = (v.sentidoLinha || '').toLowerCase();
+                    if (sentidoVeiculo === currentDirection || sentidoVeiculo === '') {
+                        activeBuses++;
+                        const marker = L.marker([v.latitude, v.longitude], { icon: busIcon })
+                            .bindPopup(`
+                                <div style="text-align:center;">
+                                    <b>Ônibus ${v.prefixo}</b><br/>
+                                    Placa: ${v.placa}<br/>
+                                    Velocidade: ${v.velocidade ? v.velocidade + ' km/h' : 'N/A'}<br/>
+                                    Sentido: ${v.sentidoLinha}
+                                </div>
+                            `)
+                            .addTo(busLayerGroup);
+                    }
+                });
+            }
+            document.getElementById('activeBusesValue').innerText = activeBuses;
+        }
+    </script>
+</body>
+</html>
