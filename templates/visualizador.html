@@ -137,9 +137,14 @@
         const map = L.map('map', { zoomControl: false }).setView([-23.5505, -46.6333], 11);
         L.control.zoom({ position: 'bottomright' }).addTo(map);
 
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-            attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
-            subdomains: 'abcd',
+        const esriDarkGray = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_';
+        L.tileLayer(esriDarkGray + 'Base/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors',
+            maxNativeZoom: 16,
+            maxZoom: 20
+        }).addTo(map);
+        L.tileLayer(esriDarkGray + 'Reference/MapServer/tile/{z}/{y}/{x}', {
+            maxNativeZoom: 16,
             maxZoom: 20
         }).addTo(map);
 
